@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Forty by HTML5 UP</title>
+		<title>Bitcoin & Sentiment</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,8 +19,9 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo"><strong>John's E-Portfolio</strong> </a>
+						<a href="index.html" class="logo"><strong>John's E-Portfolio</strong><span>Sentiment Analysis and Bitcoin Tweets</span> </a>
 						<nav>
+							<a href="https://github.com/jvit1/sentimentanalysis" target="_blank" rel="noopener noreferrer">View Code</a>
 							<a href="#menu">Menu</a>
 						</nav>
 					</header>
@@ -29,13 +30,7 @@
 					<nav id="menu">
 						<ul class="links">
 							<li><a href="index.html">Home</a></li>
-							<li><a href="landing.html">Landing</a></li>
-							<li><a href="generic.html">Generic</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-						<ul class="actions stacked">
-							<li><a href="#" class="button primary fit">Get Started</a></li>
-							<li><a href="#" class="button fit">Log In</a></li>
+							<li><a href="aboutme.html">About Me</a></li>
 						</ul>
 					</nav>
 
@@ -51,11 +46,21 @@
 									<div class='tableauPlaceholder' id='viz1626380528041' style='position: relative'><noscript><a href='#'><img alt='Sentiment Analysis and the Price of Bitcoin ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bi&#47;BitcoinSentimentAnalysis&#47;Dashboard&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='BitcoinSentimentAnalysis&#47;Dashboard' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bi&#47;BitcoinSentimentAnalysis&#47;Dashboard&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div><script type='text/javascript'>var divElement = document.getElementById('viz1626380528041');var vizElement = divElement.getElementsByTagName('object')[0];if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1427px';}var scriptElement = document.createElement('script');scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
 									<p>Before criticising my dashboard too much, just remember that I am still learning the tips and tricks of Tableau. In addition, this is still a work in progress and is updated regularly.</p>
 									<h3>Project Inspiration</h3>
-									<p>Text goes here</p>
+									<p>As Bitcoin and echo-chamber-style social media platforms (TikTok, Twitter, etc) have recently exploded in popularity, I became curious to see if sentiment and the price of bitcoin are correlated. During bitcoin's most recent boom, I would scroll through miles of posts with "buy bitcoin" style posts, and I began to wonder: do these posts actually get people to buy fancy internet money (and, in return, drive the price higher)? </p>
+									<p>To summarize, here's a quick rundown of some of the overarching research questions I worked to answer on this project:</p>
+									<ul type="circle">
+										<li>How does overall sentiment affect the price of Bitcoin?</li>
+										<li>How does sentiment change geographically?</li>
+										<li>How can we apply time series analysis to draw conclusions about prices?</li>
+									</ul>
 									<h3>Quick Rundown</h3>
-									<p>Text goes here</p>
+									<p>The Twitter API in conjunction to Tweepy was used to scrape 2000 tweets per day. In addition to just tweet text, the following were also collected: User Location, User Follower Count, User Following, User Verification, Tweet Quote Status, Account Creation Date, and Profile Picture Status. These additional features are ultimately used to remove spam from the inital scrape. Results were added into a new csv file each day, and combined into one master csv before additional analysis was done.</p>
+									<p>The current Bitcoin price was taken from Coindesk. To calculate sentiments, tweets were tokenized and the AFINN lexicon was applied. Scores were averaged each day, resulting in one, overall sentiment. These scores were then graphed against price, as seen in the dashboard.</p>
+									<p>As user location can be changed manually, locations were changed via python and the str.contains function (ex. New York manually changed to United States, or London changed to United Kingdom). Of course, this is not a perfect solution, but serves more as a bandaid fix and appeared to be effective. The same can be said with the simple spam filter. Spam was attempted to be filtered using Boolean values and account creation date. For the most part, this was effective, but some clearly spam tweets made it through this simple filter.</p>
 									<h3>Conclusions</h3>
-									<p>Text Goes Here</p>
+									<p>Still in progress! Check back soon.</p>
+									<h3>Future Considerations</h3>
+									<p>Looking back, the whole dataset would be much more effective if all tweets were kept, including spam, and filtered afterwards. This would keep the door open for alternate projects, such as language processing to determine whether or not a tweet is spam.</p>
 								</div>
 							</section>
 
@@ -65,14 +70,12 @@
 					<footer id="footer">
 						<div class="inner">
 							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/jvit1" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="http://www.linkedin.com/in/jvithoulkas/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="mailto:jpvithoulkas+portfolio@gmail.com" class="icon solid alt fa-envelope"<span class="label"></span></a></li>
 							</ul>
 							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+								<li> Disclaimer: Format used from HTML5 UP. </li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</footer>

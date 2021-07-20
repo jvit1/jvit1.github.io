@@ -39,10 +39,11 @@
 
 						<!-- One -->
 							<section id="one">
-								<img class="inner">
+								<div class="inner">
 									<header class="major">
 										<h1>Market Basket Analysis</h1>
 									</header>
+									<h2>This project is still in progress and updated frequently!</h2>
 									<h3>About Market Basket Analysis</h3>
 									<p>Before I get into the nitty-gritty, it's important to clear up some definitions that will be referenced later on. To start, market basket analysis falls under the umbrella of affinity analysis, which ultimately boils down to finding correlations between items in a data set. In the scope of this project, it means finding which grocery store items are frequently shopped together. Some benefits to this research can include more effectively placed products depending on the merchandising philosophy of the store. In this senario, the Apriori algorithm was used on a sample dataset found on Kaggle.</p>
 									<p>Let's break down some definitions about the output of the Apriori algorithm. The algorithm will take into account the 'baskets' of goods, or essentially all products shopped separated by transactions. Rules will be created, which explain how different products are shopped together. For example, a simple rule may be Cereal => Milk, which shows that Milk is often bought with cereal. There are a few definitions that will help explain how 'good' rules are.</p>
@@ -53,9 +54,14 @@
 										<li>Lift - How many times more likely that an item on the right hand side appears in the cart when it contains all items on the left hand side.</li>
 									</ul>
 									<h3>Quick Rundown</h3>
-									<img src="mbaPlot.jpeg">
+									<p>It was found that whole milk and other vegetables were the most popular products sold. However, rules with the highest lift included {liquor, wine} => {bottled beer}. The rule with highest confidence included {rice, sugar} => {whole milk}. The rule with highest support included {citrus fruit, tropical fruit} => {other vegetables}.</p>
+									<p>Graphics coming soon!</p>
 									<h3>Conclusions and Suggestions</h3>
-									<p></p>
+									<p>There's a few different ideas that the store could implement to increase sales. It's important to note that these suggestions should be implemented in a controlled setting (change as little as possible at a time).</p>
+									<ul type="circle">
+										<li>High confidence and high coverage rule - Place products in rule far from each other to encourage customers to travel past more products, thus increasing the probability of purchasing more products. </li>
+										<li>High confidence and low coverage rule - Place products close together to encourage sales of both products in one transaction.</li>
+
 								</div>
 							</section>
 

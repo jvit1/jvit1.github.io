@@ -7,6 +7,7 @@
 <html>
 	<head>
 		<title>Senators & Stocks</title>
+		<link rel="icon" href="favicon.ico?" type="image/x-icon">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -43,7 +44,23 @@
 									<header class="major">
 										<h1>US Senators and Stock Trading</h1>
 									</header>
-									<h1>Details coming soon!</h1>
+									<div class='tableauPlaceholder' id='viz1627231245687' style='position: relative'><noscript><a href='#'><img alt='Trading Dashboard ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Se&#47;SenatorTrading&#47;TradingDashboard&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SenatorTrading&#47;TradingDashboard' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Se&#47;SenatorTrading&#47;TradingDashboard&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div> <script type='text/javascript'> var divElement = document.getElementById('viz1627231245687');var vizElement = divElement.getElementsByTagName('object')[0];if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1227px';} var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+									<p>This was a data collection and visualization project using Python and the Selenium package. Financial disclosures can be found on the <a href="https://efdsearch.senate.gov/">United States Senate Financial Disclosures </a> website.</p>
+									<h3>Project Inspiration</h3>
+									<p>I became inspired to scrape financial disclosures at the beginning of the 2020 Coronavirus Pandemic after hearing news of mass stock selloffs from Senators. After learning about the STOCK Act, I became curious to see if I could create a dataset with all these dislosures. I settled on using Selenium and Python as a glorified copy-paste robot.</p>
+									<h3>How it Works</h3>
+									<p>If you've checked out the code, the nested loops might be a bit confusing. Here's an rundown on how it works in English:</p>
+									<pre><code>open website;
+select preferred options;
+
+for every page:
+	for every filing on the page:
+		open filing
+		copy-paste all details
+		return to 'main' page
+	hit the next button (and go to page n+1)
+</code></pre>
+								<p>And voila, a couple thousand clicks and a few hours later and you've successfully scraped government property. </p>
 								</div>
 							</section>
 
